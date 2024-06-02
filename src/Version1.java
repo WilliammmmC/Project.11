@@ -14,7 +14,7 @@ public class Version1 {
         System.out.println("Should you have any questions or concerns, please consult the Inland Revenue Department website before filing for the specific section.");
         System.out.println("To begin, please input your net income tax amount.");
         int totalIncome = readInt();
-        int taxReduction = 3000;
+        int taxReduction = 3000; //Value taken from the Internal Revenue Department (IRD)
         System.out.println(taxReduction);
         boolean inputCorrect = false;
         int totalDeduction = 0;
@@ -60,13 +60,13 @@ public class Version1 {
             int[] deduction = new int[9];
             System.out.println("Please identify the amount you spent on tuition and related examination to obtain or maintain qualification for a current or planned employment.");
             deduction[0] = readInt();
-            if (deduction[0] > 100000) {
+            if (deduction[0] > 100000) { // Maximum deduction amount for education and tuition
                 deduction[0] = 100000;
             }
 
             System.out.println("Please identify the amount of outgoing expenses you spent that is exclusively and necessarily for the production of your salary.");
             deduction[1] = readInt();
-            if (deduction[1] > 100000) {
+            if (deduction[1] > 100000) { //Maximum deduction amount for outgoing expenses
                 deduction[1] = 100000;
             }
 
@@ -75,37 +75,37 @@ public class Version1 {
             deduction[2] = VHISDeduction(VHISDeduction);
             System.out.println("Please identify the amount of contribution paid to a recognized retirement scheme and the amount of mandatory contribution made to a Mandatory Fund Provident Scheme.");
             deduction[3] = readInt();
-            if (deduction[3] > 18000) {
+            if (deduction[3] > 18000) { //Maximum deduction amount for mandatory contribution
                 deduction[3] = 18000;
             }
 
             System.out.println("Please identify the amount of premium and voluntary contribution paid to a qualified annuity policy for you and/or your spouse or a TVC account defined under the Mandatory Provident Fund Scheme that belongs to you.");
             deduction[4] = readInt();
-            if (deduction[4] > 60000) {
+            if (deduction[4] > 60000) { //Maximum deduction amount for voluntary contribution
                 deduction[4] = 60000;
             }
 
             System.out.println("Please identify the amount of rent paid for your residence.");
             deduction[5] = readInt();
-            if (deduction[5] > 100000) {
+            if (deduction[5] > 100000) { //Maximum deduction amount for rent
                 deduction[5] = 100000;
             }
 
             System.out.println("Please identify the amount of mortgage paid to a dwelling and attached parking spaces in Hong Kong.");
             deduction[6] = readInt();
-            if (deduction[6] > 100000) {
+            if (deduction[6] > 100000) { //Maximum deduction amount for mortgage
                 deduction[6] = 100000;
             }
 
             System.out.println("Please identify the amount of expenses paid by you/your spouse for a residential care home for your/your spouse's parents/grandparents, provided that they are over the age of 60 or eligible for Government Disability Allowance Scheme.");
             deduction[7] = readInt();
-            if (deduction[7] > 100000) {
+            if (deduction[7] > 100000) { //Maximum deduction amount for dependency care
                 deduction[7] = 100000;
             }
 
             System.out.println("Please identify the amount of donation paid to a tax-exempt charity organization or the government for a charitable cause.");
             deduction[8] = readInt();
-            if (deduction[8] > totalIncome * 0.35) {
+            if (deduction[8] > totalIncome * 0.35) { //Maximum deduction amount for charitable donation
                 deduction[8] = (int) (totalIncome * 0.35);
             }
 
@@ -268,7 +268,7 @@ public class Version1 {
         return amount * 0.15;
     }
 
-    public static int readInt() {
+    public static int readInt() { //Taught by Justin
         int result = -1;
         while (true) {
             System.out.println("Please enter an integer input:");
@@ -283,7 +283,7 @@ public class Version1 {
         return result;
     }
 
-    public static boolean readBoolean() {
+    public static boolean readBoolean() { //Try-Catch Function from w3schools)
         Scanner scanner = new Scanner(System.in);
         boolean result = false;
         boolean validInput = false;
